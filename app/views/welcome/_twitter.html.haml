@@ -1,13 +1,10 @@
 %ul.list-group
   - if defined?(tweets)
     - tweets['data'].each do |tweet|
-      %li.list-group-item#sentiment-output
+      %li.list-group-item{class: [ ('list-group-item-success' if tweet[0][:sentiment] == positive), ('list-group-item-danger' if tweet[0][:sentiment] == 'negative'), ('list-group-item-warning' if tweet[0][:sentiment] == 'neutral')]}
         = tweet[0][:text]
         = tweet[0][:sentiment]
   - else
     %li.list-group-item Get Tweets about your stock
 
-:javascript
-  $(document).load(function(){
-    sentimentColor();
-  });
+    sheena.mccoy@infusionsoft.com

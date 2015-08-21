@@ -1,3 +1,5 @@
+
+//pricing
 $(".bid-price").text(<%= @data[0].bid %>)
 $(".ask-price").text(<%= @data[0].ask %>)
 $(".52-high").text(<%= @data[0].high_52_weeks %>)
@@ -18,5 +20,5 @@ $(".previous-close").text(<%= @data[0].previous_close %>)
 
 
 
-
+//tweets
 $(".tweet-list").html("<%= escape_javascript(render partial: 'twitter', locals: { tweets: @twitter } ) %>");
