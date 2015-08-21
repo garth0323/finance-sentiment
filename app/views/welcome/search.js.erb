@@ -1,0 +1,22 @@
+$(".bid-price").text(<%= @data[0].bid %>)
+$(".ask-price").text(<%= @data[0].ask %>)
+$(".52-high").text(<%= @data[0].high_52_weeks %>)
+$(".52-low").text(<%= @data[0].low_52_weeks %>)
+$(".daily-volume").text(<%= @data[0].volume %>)
+$(".avg-volume").text(<%= @data[0].average_daily_volume %>)
+$(".previous-close").text(<%= @data[0].previous_close %>)
+<% if @data[0].change.to_f < 0 %>
+  $(".dollar-change").text(<%= @data[0].change %>)
+  $(".change-direction-color").removeClass('panel-primary panel-warning panel-success').addClass('panel-danger')
+<% elsif @data[0].change.to_f > 0 %>
+  $(".dollar-change").text(<%= @data[0].change %>)
+  $(".change-direction-color").removeClass('panel-primary panel-danger panel-warning').addClass('panel-success')
+<% else %>
+  $(".dollar-change").text(<%= @data[0].change %>)
+  $(".change-direction-color").removeClass('panel-primary panel-danger panel-success').addClass('panel-warning')
+<% end %>
+
+
+
+
+$(".tweet-list").html("<%= escape_javascript(render partial: 'twitter', locals: { tweets: @twitter } ) %>");

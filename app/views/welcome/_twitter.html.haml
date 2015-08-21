@@ -1,0 +1,7 @@
+%ul.list-group
+  - binding.pry
+  / - if @twitter.present?
+  /   - tweets['data'].each do |tweet|
+  /     %li.list-group-item= tweet.text
+  %li.list-group-item Get Tweets about your stock
+  
