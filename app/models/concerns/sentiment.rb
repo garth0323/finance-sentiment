@@ -4,13 +4,11 @@ class Sentiment
     
   end
   
-  def response(tag)
+  def response(tweet)
     response = HTTParty.post("http://sentiment.vivekn.com/api/text/",
                 { 
-                  :payload => { 'txt' => "Fuck NO" }
-                 })
-    
+                  :body => { 'txt' => "#{tweet}" }
+                })
   end
-
 
 end
