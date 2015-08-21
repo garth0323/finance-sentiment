@@ -1,7 +1,13 @@
 %ul.list-group
   - if defined?(tweets)
     - tweets['data'].each do |tweet|
-      %li.list-group-item= tweet[0][:text]
+      %li.list-group-item#sentiment-output
+        = tweet[0][:text]
+        = tweet[0][:sentiment]
   - else
     %li.list-group-item Get Tweets about your stock
-  
+
+:javascript
+  $(document).load(function(){
+    sentimentColor();
+  });

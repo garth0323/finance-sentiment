@@ -1,8 +1,4 @@
 class TwitterApi
-
-  def initialize
-    
-  end
   
   def response(tag)
     json_data = HTTParty.get("https://api.twitter.com/1.1/search/tweets.json?q=%23#{tag}&count=10",
@@ -36,6 +32,7 @@ class TwitterApi
       image_url: i["image_url"],
       text: i["text"],
       created: TwitterApi.date_format(i["created_at"]),
+      sentiment: TwitterApi.find_sentiment(i["text"])
       ]
     end
     return json_tweets
@@ -48,5 +45,10 @@ class TwitterApi
 
   def self.get_next_url(json_data)
     json_data["search_metadata"]["next_results"]
+  end
+
+  def self.find_sentiment(tweet)
+    response = Sentiment.response(tweet)
+    response.parsed_response['result']['sentiment']
   end
 end
