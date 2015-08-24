@@ -19,19 +19,11 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-group :development, :test do
+group :development do
   gem 'pry'
   gem 'pry-nav'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'factory_girl_rails'
   gem 'xray-rails'
 end
 
-group :test do
-  gem 'rspec-rails'
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'selenium-webdriver'
-  gem 'shoulda-matchers'
-end
