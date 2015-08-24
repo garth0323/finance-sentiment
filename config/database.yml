@@ -1,7 +1,12 @@
 
-default: &default
+development:
   adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  database: finan_dev
   pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  database: finan_prod
+  pool: 5
+  timeout: 5000
