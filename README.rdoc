@@ -1,4 +1,4 @@
-# Equities Have Feelings Too
+Equities Have Feelings Too
 
 API's
 - http://sentiment.vivekn.com/ for sentiment
@@ -6,6 +6,6 @@ API's
 - Twitter API
 
 
-> Shows all the relevant latest price data from yahoo finance(delayed)
-> and compares it with the latest tweets hastagged with that
-> ticker symbol. The tweets are ananlyzed for sentiment.
+Shows all the relevant latest price data from yahoo finance(delayed)
+and compares it with the latest tweets hastagged with that
+ticker symbol. The tweets are ananlyzed for sentiment.
