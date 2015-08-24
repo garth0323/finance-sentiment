@@ -1,4 +1,4 @@
-%ul.list-group
+%ul.list-group#twitter-list
   - if defined?(tweets)
     - tweets['data'].each do |tweet|
       %li.list-group-item{class: sentiment_class(tweet[0][:sentiment])}

@@ -26,7 +26,9 @@ class WelcomeController < ApplicationController
                                    :change, 
                                    :previous_close, 
                                    :volume, 
-                                   :average_daily_volume],
+                                   :average_daily_volume,
+                                   :name,
+                                   :symbol],
                                      { raw: false } )
   end
 

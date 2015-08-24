@@ -7,6 +7,7 @@ $(".52-low").text(<%= @data[0].low_52_weeks %>)
 $(".daily-volume").text(<%= @data[0].volume %>)
 $(".avg-volume").text(<%= @data[0].average_daily_volume %>)
 $(".previous-close").text(<%= @data[0].previous_close %>)
+
 <% if @data[0].change.to_f < 0 %>
   $(".dollar-change").text(<%= @data[0].change %>)
   $(".change-direction-color").removeClass('panel-primary panel-warning panel-success').addClass('panel-danger')
@@ -26,3 +27,4 @@ $(".tweet-list").html("<%= escape_javascript(render partial: 'twitter', locals: 
 
 //chart data
 $(".fin-chart").html("<%= escape_javascript(render partial: 'chart', locals: { chart_data: @chart_data } ) %>");
+$(".sen-chart").html("<%= escape_javascript(render partial: 'sentiment_chart', locals: { tweets: @twitter } ) %>");
