@@ -22,3 +22,7 @@ $(".previous-close").text(<%= @data[0].previous_close %>)
 
 //tweets
 $(".tweet-list").html("<%= escape_javascript(render partial: 'twitter', locals: { tweets: @twitter } ) %>");
+
+
+//chart data
+$(".fin-chart").html("<%= escape_javascript(render partial: 'chart', locals: { chart_data: @chart_data } ) %>");

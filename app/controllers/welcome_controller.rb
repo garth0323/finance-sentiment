@@ -5,9 +5,10 @@ class WelcomeController < ApplicationController
   end
 
   def search
-    ticker = params[:query]
-    @data = yahoo_data(ticker)
-    @twitter = TwitterApi.new.response(ticker)
+    ticker      = params[:query]
+    @data       = yahoo_data(ticker)
+    @chart_data = yahoo_chart(ticker)
+    @twitter    = TwitterApi.new.response(ticker)
   end
 
   private
@@ -16,7 +17,7 @@ class WelcomeController < ApplicationController
     params.require(:search).(:query)
   end
 
-  def yahoo_data(ticker)
+  def yahoo_data ticker
     yahoo_client = YahooFinance::Client.new
     yahoo_client.quotes([ticker], [:ask,
                                    :bid, 
@@ -29,4 +30,17 @@ class WelcomeController < ApplicationController
                                      { raw: false } )
   end
 
+  def yahoo_chart ticker
+    yahoo_client = YahooFinance::Client.new
+    quotes = yahoo_client.historical_quotes(ticker, { raw: false, period: :monthly })
+    date_and_close_json quotes
+  end
+
+  def date_and_close_json quotes
+    closes = {}
+    quotes.each do |day|
+      closes[day["trade_date"]] = day["close"].to_f.round(4)
+    end
+    return closes
+  end
 end
