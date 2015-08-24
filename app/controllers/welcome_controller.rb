@@ -32,7 +32,7 @@ class WelcomeController < ApplicationController
 
   def yahoo_chart ticker
     yahoo_client = YahooFinance::Client.new
-    quotes = yahoo_client.historical_quotes(ticker, { raw: false, period: :monthly })
+    quotes = yahoo_client.historical_quotes(ticker, { raw: false, period: :daily, start_date: Time::now-(24*60*60*30), end_date: Time::now })
     date_and_close_json quotes
   end
 

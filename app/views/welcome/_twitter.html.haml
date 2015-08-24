@@ -3,6 +3,5 @@
     - tweets['data'].each do |tweet|
       %li.list-group-item{class: sentiment_class(tweet[0][:sentiment])}
         = tweet[0][:text]
-        = tweet[0][:sentiment]
   - else
     %li.list-group-item Get Tweets about your stock
