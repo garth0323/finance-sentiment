@@ -1,10 +1,10 @@
 !!!
 %html
   %head
-    %title FinanceSentiment
-    = javascript_include_tag "http://www.google.com/jsapi", "chartkick"
+    %title Equities Feelings
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag "http://www.google.com/jsapi", "chartkick"
     = csrf_meta_tags
   %body
     = yield
