@@ -1,4 +1,8 @@
-%ul.list-group#twitter-list
+- if defined?(tweets)
+  .btn-group.text-center#twitter-key{"aria-label" => "...", :role => "group"}
+    %button.btn.btn-success{:type => "button"} Positive Sentiment
+    %button.btn.btn-danger{:type => "button"} Negative Sentiment
+    %button.btn.btn-warning{:type => "button"} Neutral Sentiment
   - if defined?(tweets)
     - tweets['data'].each do |tweet|
       %li.list-group-item{class: sentiment_class(tweet[0][:sentiment])}

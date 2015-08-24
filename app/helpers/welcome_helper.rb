@@ -21,7 +21,7 @@ module WelcomeHelper
         neutral += 1
       end
     end
-    array = {"Postive" => positive, "Negative" => negative, "Neutral" => neutral}
+    array = { "Neutral" => neutral, "Postive" => positive, "Negative" => negative}
     return array
   end
   
