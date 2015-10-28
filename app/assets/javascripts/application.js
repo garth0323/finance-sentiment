@@ -15,3 +15,25 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+
+$( document ).ready(function(){
+  // hide it first
+  // $("#spinner").hide();
+
+  $('#spinner').ajaxStart(function () {
+        $(this).fadeIn('fast');
+    }).ajaxStop(function () {
+        $(this).stop().fadeOut('fast');
+    });
+
+  // // when an ajax request starts, show spinner
+  // $( document ).ajaxStart(function(){
+  //     $("#spinner").show();
+  // });
+
+  // // when an ajax request complets, hide spinner    
+  // $( document ).ajaxStop(function(){
+  //     $("#spinner").hide();
+  // });
+});

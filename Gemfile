@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'yahoo-finance'
 gem 'chartkick'
 gem 'groupdate'
+gem 'pusher'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development do
