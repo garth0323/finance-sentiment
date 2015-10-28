@@ -5,6 +5,9 @@ class WelcomeController < ApplicationController
   end
 
   def search
+    Pusher['test_channel'].trigger('search', {
+      :search => "#{params[:query]}"
+    })
     ticker      = params[:query]
     @data       = yahoo_data(ticker)
     @chart_data = yahoo_chart(ticker)
